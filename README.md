@@ -1,2 +1,3 @@
 # ejercicio condicionales
-## practico 1
+## ejercicios en clases
+

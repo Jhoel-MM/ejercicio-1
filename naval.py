@@ -1,23 +1,28 @@
 import random
+import json
 
 TAM, NUM_BARCOS, INTENTOS = 5, 3, 10
 LETRAS = ['A', 'B', 'C', 'D', 'E']
 
+# Función para crear un tablero vacío
 def crear_tablero(): return [['~']*TAM for _ in range(TAM)]
 
+# Función para mostrar el tablero
 def mostrar(tablero):
     print("   " + " ".join(str(i+1) for i in range(TAM)))
     for i, fila in enumerate(tablero):
         print(f"{LETRAS[i]}  " + " ".join(fila))
 
+# Función para colocar los barcos en el tablero
 def colocar_barcos(tablero):
     for _ in range(NUM_BARCOS):
         while True:
-            f, c = random.randint(0,TAM-1), random.randint(0,TAM-1)
+            f, c = random.randint(0, TAM-1), random.randint(0, TAM-1)
             if tablero[f][c] != 'B':
                 tablero[f][c] = 'B'
                 break
 
+# Función para pedir la coordenada al jugador
 def pedir_coord(nombre):
     while True:
         coord = input(f"{nombre}, coordenada (A1-E5): ").upper()
@@ -26,6 +31,7 @@ def pedir_coord(nombre):
             if 0 <= c < TAM: return f, c
         print("❌ Coordenada inválida.")
 
+# Función para realizar un disparo
 def disparo(nombre, visible, oculto):
     mostrar(visible)
     f, c = pedir_coord(nombre)
@@ -41,12 +47,31 @@ def disparo(nombre, visible, oculto):
         visible[f][c] = 'O'
         return 0
 
+# Función para revelar los barcos en el tablero
 def revelar(visible, oculto):
     for i in range(TAM):
         for j in range(TAM):
             if oculto[i][j] == 'B' and visible[i][j] == '~':
                 visible[i][j] = '🚢'
 
+# Función para guardar puntajes en un archivo JSON
+def guardar_puntajes(nombres, puntajes):
+    try:
+        # Intentar cargar el archivo JSON si existe
+        with open('puntajes.json', 'r') as f:
+            datos = json.load(f)
+    except FileNotFoundError:
+        datos = {}
+
+    # Guardar el puntaje actual
+    datos[nombres[0]] = puntajes[0]
+    datos[nombres[1]] = puntajes[1]
+
+    # Escribir de nuevo en el archivo JSON
+    with open('puntajes.json', 'w') as f:
+        json.dump(datos, f, indent=4)
+
+# Función principal para jugar
 def jugar():
     print("1. Contra bot\n2. 2 jugadores")
     modo = input("Elige modo: ")
@@ -73,6 +98,9 @@ def jugar():
             revelar(vis[i], occ[1-i])
             mostrar(vis[i])
 
+        # Guardar los puntajes
+        guardar_puntajes([n1, n2], pts)
+
     else:
         nombre = input("Tu nombre: ")
         vis, occ = crear_tablero(), crear_tablero()
@@ -90,6 +118,9 @@ def jugar():
         print("\n🔍 Posiciones reales:")
         revelar(vis, occ)
         mostrar(vis)
+
+        # Guardar el puntaje
+        guardar_puntajes([nombre], [aciertos])
 
 if __name__ == "__main__":
     jugar()

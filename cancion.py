@@ -47,3 +47,5 @@ print(f"Cantidad de canciones en la biblioteca: {len(biblioteca_musical)}")
 print("\n--- Biblioteca Musical ---")
 for cancion in biblioteca_musical:
     print(f"- '{cancion['titulo']}' por {cancion['artista']}")
+print("\n fin del programa")
+print("Jhoel Ivan Macias Mamani")

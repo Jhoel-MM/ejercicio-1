@@ -15,3 +15,5 @@ producto['en_oferta'] = True
 
 print("\nDiccionario completo del producto con todos los cambios:")
 print(producto)
+print("\nFin del programa")
+print("Jhoel Ivan Macias Mamani")

@@ -102,7 +102,9 @@ while True:
 
     elif opcion == '0':
         print("¡Hasta luego!")
+        print("Jhoel Ivan Macias Mamani")
         break
 
     else:
         print("Opción no válida. Inténtalo de nuevo.")
+        

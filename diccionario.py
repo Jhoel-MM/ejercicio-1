@@ -36,3 +36,5 @@ print("\n--- Inventario Actual ---")
 for producto in inventario:
     # Dentro del bucle, accede al nombre y al stock de ese diccionario e imprime un resumen.
     print(f"- {producto['nombre']}: {producto['stock']} unidades en stock.")
+print ("\n--- Fin del Programa ---")
+print ("Jhoel Ivan Macias Mamani")

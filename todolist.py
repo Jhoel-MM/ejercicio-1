@@ -84,6 +84,8 @@ while True:
             print(" Error: Ingresa un número válido.")
     elif opcion == '0':
         print("¡Hasta pronto!")
+        print("-- Jhoel Ivan Macias Mamani --")
         break
     else:
         print(" Opción no válida. Inténtalo de nuevo.")
+

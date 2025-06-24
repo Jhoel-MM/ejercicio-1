@@ -100,6 +100,7 @@ def main():
                 print("Entrada invalida.")
         elif opcion == '0':
             print("Gracias por usar el sistema de reserva de cine.")
+            print("--- Jhoel Macias Mamani ---")
             break
         else:
             print("Opcion no valida.")

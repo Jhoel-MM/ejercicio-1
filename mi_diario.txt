@@ -1,0 +1,7 @@
+Querido diario,
+Hoy aprendí sobre archivos en Python.
+El modo 'w' borra todo antes de escribir. ¡Qué miedo!
+hola mundo
+replit
+buanas
+casa

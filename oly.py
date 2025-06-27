@@ -1,10 +1,10 @@
-# Ejercicio 1: Crear y escribir en un archivo de texto llamado "mi_diario.txt"
+ #Ejercicio 1: Crear y escribir en un archivo de texto llamado "mi_diario.txt"
 
 # Paso 1: Definimos el nombre del archivo
 nombre_archivo = "mi_diario.txt"
 
 # Paso 2: Usamos 'with open(...)' en modo escritura ('w')
-# Esto crea el archivo si no existe y lo sobreescribe si ya existe.
+# Esto Crea el archivo si no existe, y lo sobreescribe si ya existe.
 with open(nombre_archivo, "w") as diario_file:
     # Paso 3: Escribimos varias líneas en el archivo usando .write()
     diario_file.write("Querido diario,\n")
@@ -38,7 +38,7 @@ except FileNotFoundError:
 # Probamos dos formas: opción A (leer todo) y opción B (leer línea por línea)
 
 # ------------------------------
-# 📝 Opción A: Leer todo de golpe
+# 🔹 Opción A: Leer todo de golpe
 # ------------------------------
 # Esta opción carga todo el contenido del archivo como un solo string
 # Útil si queremos procesar o mostrar todo junto
@@ -52,7 +52,7 @@ except FileNotFoundError:
     print(f"❌ Error: El archivo '{nombre_archivo}' no existe.")
 
 # -----------------------------------
-# 🗒️ Opción B: Leer línea por línea
+# 🔸 Opción B: Leer línea por línea
 # -----------------------------------
 # Esta opción permite manejar cada línea por separado
 # Ideal para procesar o mostrar contenido ordenado, sin saltos extra
@@ -67,12 +67,12 @@ except FileNotFoundError:
 
 # Ejercicio 3: Añadir nuevas entradas al archivo sin borrar lo anterior (modo 'a')
 
-print("\n📒 Añadiendo nuevas entradas al diario...")
+print("\n📝 Añadiendo nuevas entradas al diario...")
 
 # Abrimos el archivo en modo añadir ('a')
 with open(nombre_archivo, "a") as diario_file:
     # Escribimos nuevas líneas. También podemos añadir una línea separadora.
-    diario_file.write("\n--- Entrada del 20 de junio de 2025 ---\n")
+    diario_file.write("\n--- Entrada del 20 de Junio de 2025 ---\n")
     diario_file.write("El modo 'a' es genial para no perder datos.\n")
     diario_file.write("Ahora mi diario puede crecer cada día.\n")
 

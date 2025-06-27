@@ -1,0 +1,11 @@
+{
+  "Por Hacer": [],
+  "En Progreso": [],
+  "Completado": [
+    {
+      "desc": "estudio",
+      "asignado": "codigos de c#",
+      "prioridad": "Media"
+    }
+  ]
+}
